@@ -1,0 +1,99 @@
+{
+  "id": "E154",
+  "value": 11.52629264328796,
+  "method": "Independent Python Decimal at 1000 decimal digits; R sum n_i ln(nTotal/n_i); 1000 digits retain 600-order composition separation.",
+  "cases": [
+    {
+      "name": "two equal species",
+      "values": {},
+      "expected": 11.52629264328796
+    },
+    {
+      "name": "unequal species",
+      "values": {
+        "components": [
+          {
+            "n": 1
+          },
+          {
+            "n": 3
+          }
+        ]
+      },
+      "expected": 18.702058155227512
+    },
+    {
+      "name": "three species use all rows",
+      "values": {
+        "components": [
+          {
+            "n": 1
+          },
+          {
+            "n": 1
+          },
+          {
+            "n": 1
+          }
+        ]
+      },
+      "expected": 27.403112417924323
+    },
+    {
+      "name": "one species",
+      "values": {
+        "components": [
+          {
+            "n": 5
+          }
+        ]
+      },
+      "expected": 0.0
+    },
+    {
+      "name": "zero row ignored",
+      "values": {
+        "components": [
+          {
+            "n": 1
+          },
+          {
+            "n": 0
+          },
+          {
+            "n": 1
+          }
+        ]
+      },
+      "expected": 11.52629264328796
+    },
+    {
+      "name": "six hundred orders composition separation",
+      "values": {
+        "components": [
+          {
+            "n": 1e+300
+          },
+          {
+            "n": 1e-300
+          }
+        ]
+      },
+      "expected": 1.149516907110769e-296
+    },
+    {
+      "name": "all zero amounts",
+      "values": {
+        "components": [
+          {
+            "n": 0
+          },
+          {
+            "n": 0
+          }
+        ]
+      },
+      "throws": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "E154",
+  "slug": "eng-ideal-mixing-entropy",
+  "title": "이상기체 혼합 엔트로피 계산기",
+  "title_en": "Ideal gas mixing entropy calculator",
+  "category": "열·열역학",
+  "category_en": "Heat and thermodynamics",
+  "fields": [],
+  "groups": [
+    {
+      "key": "components",
+      "label": "서로 다른 기체별 몰수",
+      "label_en": "Amount of each distinct gas",
+      "fields": [
+        {
+          "key": "n",
+          "label": "기체 몰수 nᵢ",
+          "label_en": "Gas amount nᵢ",
+          "dimension": "amount",
+          "example": 1,
+          "constraint": "nonnegative",
+          "display_unit": "mol"
+        }
+      ],
+      "examples": [
+        {
+          "n": 1
+        },
+        {
+          "n": 1
+        }
+      ],
+      "minRows": 1,
+      "maxRows": 100
+    }
+  ],
+  "result_label": "혼합 엔트로피 증가 ΔS",
+  "result_label_en": "Entropy increase on mixing ΔS",
+  "result_dimension": "entropy",
+  "formula": "ΔSmix = −R Σ[nᵢ ln(xᵢ)]; xᵢ = nᵢ/Σnᵢ; lim(nᵢ→0⁺) nᵢ ln(nᵢ/Σnⱼ) = 0",
+  "purpose": "처음에 같은 온도와 압력으로 분리되어 있던 서로 다른 이상기체를 혼합할 때의 엔트로피 증가를 구합니다.",
+  "purpose_en": "Find the entropy increase when distinct ideal gases, initially separated at the same temperature and pressure, are mixed.",
+  "assumptions": "각 행은 서로 다른 화학종 하나를 뜻합니다. 같은 기체를 여러 행에 나눠 입력하면 안 됩니다. 모든 기체의 초기 온도와 압력이 같고, 반응·상변화·비이상성 없이 혼합한다고 가정합니다. 0 mol 행은 제외되며 적어도 한 행은 양수여야 합니다. 기체가 한 종류만 남으면 ΔS=0입니다.",
+  "assumptions_en": "Each row represents one distinct chemical species. Combine amounts of the same gas into one row. Required: equal initial temperature and pressure for all gases. Excluded: reaction, phase change and nonideal behavior. Zero-amount rows are ignored and at least one row must have positive amount. With only one gas species the mixing entropy is zero.",
+  "sources": [
+    {
+      "label": "Brian Cantwell, Stanford · Thermodynamics of Reacting Mixtures, ideal-gas mixing Eq. 9.42",
+      "url": "https://web.stanford.edu/~cantwell/AA103_Course_Material/AA103%20Course%20Reference%20Texts%20from%20AA210%20and%20AA283/AA283_Ch_9_Thermodynamics_of_Reacting_Mixtures_gases_only.pdf"
+    }
+  ],
+  "condition": "서로 다른 기체를 한 행씩 입력했고 초기 온도·압력이 같으며 이상기체 혼합 조건임을 확인했습니다.",
+  "condition_en": "I confirm one row per distinct gas, equal initial temperature and pressure, and ideal gas mixing.",
+  "site": "https://nanalab.kr/eng-ideal-mixing-entropy/",
+  "repository": "https://github.com/NaNaCompany/eng-ideal-mixing-entropy",
+  "output_unit": "JK"
+}
